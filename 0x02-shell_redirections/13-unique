@@ -1,9 +1,3 @@
 #!/bin/bash
-
-# read input into an array
-read -a words
-
-# use grep to print words that appear exactly once
-echo "${words[@]}" | tr ' ' '\n' | sort | uniq -u
-
+echo sort | uniq -u
 
