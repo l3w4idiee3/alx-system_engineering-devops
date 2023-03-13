@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# read input into an array
+read -p "Enter a list of words separated by spaces: " -a words
+
+# create an associative array to store the frequency of each word
+declare -A freq
+
+# loop through the array and update the frequency for each word
+for word in "${words[@]}"; do
+  ((freq[$word]++))
+done
+
+# loop through the array again and print words that appear exactly once
+for word in "${words[@]}"; do
+  if ((freq[$word] == 1)); then
+    echo $word
+  fi
+done
+
